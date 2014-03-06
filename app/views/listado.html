@@ -1,0 +1,37 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a ng-href="#">Home</a></li>
+        <li class="active"><a ng-href="#/listado">Listado</a></li>
+        <li><a ng-href="#/mapa">Mapa</a></li>
+    </ul>
+    <h3 class="text-muted">Tranvia de Zaragoza</h3>
+</div>
+
+<div>
+
+    <div class="searchbox row">
+        <div class="col-md-6">
+            <input class="input-lg" type="text" placeholder="Filtrar..." ng-model="busqueda">
+        </div>
+		<div class="col-md-6">
+            Destino<br/>
+
+            <label class="checkbox-inline">
+                <input type="radio" ng-model="destino" value="AVENIDA ACADEMIA"> AVENIDA ACADEMIA
+            </label>
+
+            <label class="checkbox-inline">
+                <input type="radio" ng-model="destino" value="MAGO DE OZ"> MAGO DE OZ
+            </label>
+        </div>
+    </div>
+<br>
+    <ul>
+        <li ng-repeat="tranvia in tranvias.result|filter:destino|filter:busqueda">
+            <tranvia ng-model="tranvia"><img class="img-thumbnail" style="height: 25px; heigh: 25px" ng-src="tranvia.icon">{{tranvia.title}}</tranvia>
+        </li>
+    </ul>
+</div>
+
+
+

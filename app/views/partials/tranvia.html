@@ -1,0 +1,23 @@
+<div class="row ">
+    <div class="col-md-12 center-block">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3 class="panel-title" ng-click="verTodo = !verTodo">
+                    <span class="glyphicon" ng-class="{'glyphicon-chevron-right' : !verTodo,'glyphicon-chevron-down' : verTodo}"></span>
+                    <img class="img-thumbnail" style="height: 25px; heigh: 25px" ng-src="{{tranvia.icon}}">&nbsp;{{ tranvia.title }}
+                </h3>
+            </div>
+			
+            <div class="panel-body" ng-if="verTodo">
+				<p><b>Destino:</b></p>
+				<ul>
+				<li ng-repeat="linea in tranvia.destinos">
+					<span class="label label-warning">{{linea.linea}}</span>&nbsp; {{linea.destino}}&nbsp; <span class="badge" ng-bind="linea.minutos"></span>&nbsp;minutos
+				</li>
+			</ul>
+            </div>
+
+        </div>
+    </div>
+</div>
